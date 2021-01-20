@@ -95,7 +95,13 @@
       <section id="main-content">
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> DAFTAR BUKU</h3>
-            <button class="btn-warning" style="height: 30px;margin-left: 16px;"><a href="user/print.php" style="text-decoration: none;color: #fff;">CETAK DATA BUKU</a></button>
+            <?php 
+              if (isset($_SESSION["username"])) {
+                echo "<button style='height: 30px;margin-left: 16px;' class='btn-warning'><a href='user/print.php' style='text-decoration: none;color: #fff;'>CETAK DATA BUKU</a></button>";
+              } else {
+                echo "<button style='height: 30px;margin-left: 16px;' class='btn-danger'><a href='login.php' style='text-decoration: none;color: #fff;'>LOGIN UNTUK CETAK DATA BUKU</a></button>";
+              }
+             ?>
             <div class="row mt">
               <div class="col-lg-12">
                 <! -- ROW 1 OF PANELS -->
